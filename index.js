@@ -86,3 +86,26 @@ var finances = [
 ['Jan-2017', 138230],
 ['Feb-2017', 671099]
 ];
+//MY CODE STARTS HERE
+console.log("Financial Analysis");//heading
+console.log("-------------------------------");
+console.log("Total Months: " + finances.length);//total of months = lenght of this array
+
+let total = 0;
+
+for (let i = 0; i < finances.length; i++) {
+    total += finances[i][1];
+ }
+ console.log(`Total: $${total}`)
+
+
+//AVERAGE CHANGE WILL BE HERE, I AM NOT SURE ABOUT IT YET
+
+//Greatest increase in profits
+let temp = 0
+finances.forEach((element) => {
+    if (temp < finances) {
+        temp = element
+    };
+  });
+console.log(temp)
