@@ -87,16 +87,16 @@ var finances = [
 ['Feb-2017', 671099]
 ];
 //MY CODE STARTS HERE
-console.log("Financial Analysis");//heading
-console.log("-------------------------------");
-console.log("Total Months: " + finances.length);//total of months = lenght of this array
+console.log("Financial Analysis");//heading, see in consle(SIC)
+console.log("-------------------------------");//(SIC)
+console.log("Total Months: " + finances.length);//total of months = lenght of this array (SIC)
 
 let total = 0;
 
 for (let i = 0; i < finances.length; i++) { //loop to calculate profit over entire period
     total += finances[i][1];
  }
- console.log(`Total: $${total}`)
+ console.log(`Total: $${total}`) //(SIC)
  
  
 //AVERAGE CHANGE 
@@ -106,16 +106,16 @@ for (let i=0; i < finances.length - 1 ; i ++) {
    change.push(finances[i + 1][1] - finances[i][1]);
 }
 
-console.log(change);
 //loop to calculate all change over entire period
 let totalChange = 0;
 for (let i = 0; i < change.length; i++) { 
-    totalChange += finances[i][1];
+    totalChange += change[i];
  }
- console.log(totalChange)
+
 //calculating average
 var averageChange = totalChange / change.length;
-console.log(`Avarage of total change is: $${averageChange}` )
+
+console.log(`Avarage change: $${averageChange.toFixed(2)}` )//(SIC)
 
 
 //Greatest increase in 
@@ -124,21 +124,22 @@ let index = 0;
 let highestProfit= 1;
 for(let i = 0; i < change.length ; i++) {
     if(highestProfit < change[i]){
-        highestProfit = change[i]
-        index = i
-    }   
+        highestProfit = change[i];
+        index = i;
+    }   ;
 }
-console.log(highestProfit)
-var bestMonth = finances[index + 1][0]
+//console.log(highestProfit)
+var bestMonth = finances[index + 1][0];
 //console.log(highest.Profit)
-
-var index2 = 0
+console.log(`Greatest Increase in Profits: ${bestMonth} ($${highestProfit})`);//(SIC)
+var index2 = 0;
 let lowestProfit = 0;
 for(let i = 0; i < change.length ; i++) {
     if(lowestProfit > change[i]){
-        lowestProfit = change[i]
-       index2 = i}
+        lowestProfit = change[i];
+       index2 = i;}
     
 }
 var worstMonth = finances[index2 + 1][0];
-console.log(worstMonth);
+//console.log(worstMonth);
+console.log(`Greatest Decrease in Profits: ${worstMonth} ($${lowestProfit})`)
