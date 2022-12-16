@@ -18,6 +18,6 @@ Can calculate different inputs when added or taken from finances array.
 ## Screenshot
 ![Screenshot](./screenshot.png)
 ## Link
-[HERE](url) is link to my deployed application.
+[HERE](https://frantiskaali.github.io/JavaScriptApp/) is link to my deployed application.
 ## Credits
 Made by me(FranAli) as BootCamp challange
