@@ -93,19 +93,52 @@ console.log("Total Months: " + finances.length);//total of months = lenght of th
 
 let total = 0;
 
-for (let i = 0; i < finances.length; i++) {
+for (let i = 0; i < finances.length; i++) { //loop to calculate profit over entire period
     total += finances[i][1];
  }
  console.log(`Total: $${total}`)
+ 
+ 
+//AVERAGE CHANGE 
+var change = []
+//i +1 - i , put in new array(use push command), array lenght should all months -1
+for (let i=0; i < finances.length - 1 ; i ++) {
+   change.push(finances[i + 1][1] - finances[i][1]);
+}
+
+console.log(change);
+//loop to calculate all change over entire period
+let totalChange = 0;
+for (let i = 0; i < change.length; i++) { 
+    totalChange += finances[i][1];
+ }
+ console.log(totalChange)
+//calculating average
+var averageChange = totalChange / change.length;
+console.log(`Avarage of total change is: $${averageChange}` )
 
 
-//AVERAGE CHANGE WILL BE HERE, I AM NOT SURE ABOUT IT YET
+//Greatest increase in 
 
-//Greatest increase in profits
-let temp = 0
-finances.forEach((element) => {
-    if (temp < finances) {
-        temp = element
-    };
-  });
-console.log(temp)
+let index = 0;
+let highestProfit= 1;
+for(let i = 0; i < change.length ; i++) {
+    if(highestProfit < change[i]){
+        highestProfit = change[i]
+        index = i
+    }   
+}
+console.log(highestProfit)
+var bestMonth = finances[index + 1][0]
+//console.log(highest.Profit)
+
+var index2 = 0
+let lowestProfit = 0;
+for(let i = 0; i < change.length ; i++) {
+    if(lowestProfit > change[i]){
+        lowestProfit = change[i]
+       index2 = i}
+    
+}
+var worstMonth = finances[index2 + 1][0];
+console.log(worstMonth);
